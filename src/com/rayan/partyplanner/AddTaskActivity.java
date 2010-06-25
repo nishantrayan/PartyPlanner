@@ -15,7 +15,6 @@ import com.rayan.partyplanner.data.Task;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class AddTaskActivity extends Activity {
@@ -23,9 +22,9 @@ public class AddTaskActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_task_layout);
-        Button add_button = (Button) findViewById(R.id.add_button);
+        Button saveTask = (Button) findViewById(R.id.save_task);
         final ContentResolver contentResolver = getContentResolver();
-        add_button.setOnClickListener(new View.OnClickListener() {
+        saveTask.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 ContentValues contentValues = new ContentValues();
                 String person_name = ((EditText) findViewById(R.id.person_name)).getText().toString();

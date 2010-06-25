@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.rayan.partyplanner">
     <application android:icon="@drawable/icon" android:label="PartyPlanner">
-        <activity android:name=".AddTaskActivity">
+
+        <activity android:name=".TaskListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

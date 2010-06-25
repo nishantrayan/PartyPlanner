@@ -11,7 +11,7 @@
               android:hint="Task title" android:layout_marginTop="@dimen/padding_top"/>
     <DatePicker android:id="@+id/task_date" android:layout_height="wrap_content" android:layout_width="fill_parent"
                 android:layout_marginTop="@dimen/padding_top"/>
-    <Button android:id="@+id/add_button" android:text="Add" android:layout_height="wrap_content"
+    <Button android:id="@+id/save_task" android:text="Save" android:layout_height="wrap_content"
             android:layout_width="wrap_content" android:width="100px" android:gravity="center"
             android:layout_marginTop="10px"/>
 </LinearLayout>

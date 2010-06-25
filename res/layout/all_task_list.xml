@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (c) 2010
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="wrap_content"
+              android:layout_height="wrap_content" android:orientation="vertical">
+    <ListView android:layout_width="fill_parent"
+              android:layout_height="300px" android:id="@android:id/list"></ListView>
+    <LinearLayout android:layout_width="fill_parent"
+                  android:layout_height="wrap_content">
+        <Button android:id="@+id/add_task" android:text="Add" android:layout_height="wrap_content"
+                android:layout_width="wrap_content" android:width="100px" android:gravity="center" android:layout_marginLeft="100px" 
+                />
+    </LinearLayout>
+
+</LinearLayout>
