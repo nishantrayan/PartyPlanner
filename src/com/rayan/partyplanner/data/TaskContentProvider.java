@@ -10,7 +10,11 @@ import android.content.ContentValues;
 import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class TaskContentProvider extends ContentProvider {
@@ -26,8 +30,18 @@ public class TaskContentProvider extends ContentProvider {
     }
 
     @Override
-    public Cursor query(Uri uri, String[] strings, String s, String[] strings1, String s1) {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
+        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
+        qb.setTables(Task.TABLE_NAME);
+        Map<String, String> projMap = new HashMap();
+        projMap.put(Task.TASK_TITLE, Task.TASK_TITLE);
+        projMap.put(Task.PERSON_NAME, Task.PERSON_NAME);
+        projMap.put(Task.TASK_DATE, Task.TASK_DATE);
+        qb.setProjectionMap(projMap);
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor c = qb.query(db, projection, selection, selectionArgs, null, null, sortOrder);
+        c.setNotificationUri(getContext().getContentResolver(), uri);
+        return c;
     }
 
     @Override

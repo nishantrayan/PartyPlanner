@@ -18,7 +18,6 @@ public class TaskListActivity extends ListActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.all_task_list);
-//        ListView allTasks = (ListView) findViewById(android.R.id.list);
         String[] columns = {"_id", "PERSON_NAME", "TASK_TITLE"};
         MatrixCursor cursor = new MatrixCursor(columns);
         Cursor cur = managedQuery(Task.URI, null, null, null, null);
