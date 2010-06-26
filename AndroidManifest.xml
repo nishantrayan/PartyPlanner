@@ -9,6 +9,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".AddTaskActivity">
+        </activity>
         <provider android:name="com.rayan.partyplanner.data.TaskContentProvider"
                   android:authorities="com.rayan.partyplanner"></provider>
     </application>

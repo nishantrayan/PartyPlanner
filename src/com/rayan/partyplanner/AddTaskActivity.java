@@ -6,6 +6,7 @@ package com.rayan.partyplanner;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -37,6 +38,8 @@ public class AddTaskActivity extends Activity {
                 contentValues.put(Task.TASK_TITLE, task_title);
                 contentValues.put(Task.TASK_DATE, task_date);
                 contentResolver.insert(Task.URI, contentValues);
+                Intent listTasksIntent=new Intent(AddTaskActivity.this,TaskListActivity.class);
+                startActivity(listTasksIntent);
             }
         });
     }
