@@ -11,6 +11,8 @@
         </activity>
         <activity android:name=".AddTaskActivity">
         </activity>
+        <activity android:name=".PersonTaskListActivity">
+        </activity>
         <provider android:name="com.rayan.partyplanner.data.TaskContentProvider"
                   android:authorities="com.rayan.partyplanner"></provider>
     </application>

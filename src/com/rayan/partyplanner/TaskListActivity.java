@@ -9,8 +9,7 @@ import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.SimpleCursorAdapter;
+import android.widget.*;
 import com.rayan.partyplanner.data.Task;
 
 import java.util.HashMap;
@@ -43,6 +42,17 @@ public class TaskListActivity extends ListActivity {
             public void onClick(View view) {
                 Intent addTaskIntent = new Intent(TaskListActivity.this, AddTaskActivity.class);
                 startActivity(addTaskIntent);
+            }
+        });
+        getListView().setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                TextView  personNameTextView = (TextView) ((LinearLayout) view).findViewById(R.id.all_task_person_name);
+                String personName = personNameTextView.getText().toString();
+                Intent showPersonTasksIntent = new Intent(TaskListActivity.this, PersonTaskListActivity.class);
+                Bundle bundle=new Bundle();
+                bundle.putString(Task.PERSON_NAME,personName);
+                showPersonTasksIntent.putExtras(bundle);
+                startActivity(showPersonTasksIntent);
             }
         });
     }

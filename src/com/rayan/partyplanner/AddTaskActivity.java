@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import com.rayan.partyplanner.data.Task;
 
 import java.text.DateFormat;
@@ -38,9 +39,19 @@ public class AddTaskActivity extends Activity {
                 contentValues.put(Task.TASK_TITLE, task_title);
                 contentValues.put(Task.TASK_DATE, task_date);
                 contentResolver.insert(Task.URI, contentValues);
-                Intent listTasksIntent=new Intent(AddTaskActivity.this,TaskListActivity.class);
+                Intent listTasksIntent = new Intent(AddTaskActivity.this, TaskListActivity.class);
                 startActivity(listTasksIntent);
             }
         });
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            String personName = bundle.getString(Task.PERSON_NAME);
+            if (personName != null) {
+                TextView personNameView = (TextView) findViewById(R.id.person_name);
+                personNameView.setText(personName);
+                View task_title = findViewById(R.id.task_title);
+            }
+        }
     }
 }
